@@ -1,0 +1,26 @@
+<div class="sidebar">
+    <div class="container">
+      <div class="sidebar-about">
+          <a href="{{.Site.BaseURL}} /">
+            <img class="sidebar-image" src="{{ .Site.BaseURL }}/public/OSCAR_logo.png" alt="OSCAR Symolic Tools"/>
+          </a>
+        <p class="lead">The OSCAR project</p>
+        <hr>
+      </div>
+  
+      <nav class="sidebar-nav">
+  
+        <a class="sidebar-nav-item{{if .Page.IsHome}} active{{end}}" href="{{.Site.BaseURL}}">Home</a>
+  
+        <a class='sidebar-nav-item{{if compare.Eq .Page.Title "About"}} active{{end}}' href="{{ .Site.BaseURL }}/about/">About</a>
+  
+        <a class="sidebar-nav-item" href="https://github.com/oscar-system/Oscar.jl/">Oscar.jl on Github</a>
+  
+        <div class="mobile-hidden">
+          <hr>
+          {{ partial "footer.html" .}}
+        </div>
+      </nav>
+    </div>
+  </div>
+  

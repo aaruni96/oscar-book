@@ -1,0 +1,67 @@
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  
+    <!-- Enable responsiveness on mobile devices-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  
+    <title>
+      {{ if .Page.IsHome }}
+        {{ .Site.Title }}
+      {{ else }}
+        {{ .Page.Title }} &middot; {{ .Site.Title }}
+      {{ end }}
+    </title>
+  
+    <!-- CSS -->
+    {{ $sass := resources.Get "_sass/main.scss" }}
+    {{ $style := $sass | resources.ToCSS }}
+    <link rel="stylesheet" href="{{ $style.Permalink }}" integrity="{{ $style.Data.Integrity }}">
+    <!--<link rel="stylesheet" href="{{ .Site.BaseURL }}/public/css/oscar.css?version=2"> -->
+  
+    <!-- atom news feed -->
+    <link rel="alternate" type="application/atom+xml" title="OSCAR news" href="{{ .Site.BaseURL }}/feed-news.xml">
+  
+    <!-- Icons (made with https://realfavicongenerator.net)-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+  
+    <!-- MathJax -->
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js"></script>
+  
+  <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>
+    {{ if .Page.IsHome }}
+    {{ .Site.Title }}
+  {{ else }}
+    {{ .Page.Title }} | {{ .Site.Title }}
+  {{ end }}
+</title>
+<meta name="generator" content="Hugo" />
+<meta property="og:title" content="{{.Page.Title}}" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="OSCAR, an Open Source Computer Algebra Research System written in Julia" />
+<meta property="og:description" content="OSCAR, an Open Source Computer Algebra Research System written in Julia" />
+<link rel="canonical" href='{{.Permalink}}' />
+<meta property="og:url" content="{{.Permalink}}" />
+<meta property="og:site_name" content="{{.Site.Title}}" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Home" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","description":"OSCAR, an Open Source Computer Algebra Research System written in Julia","headline":"Home","name":"OSCAR Computer Algebra System","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.oscar-system.org/public/OSCAR_logo.png"}},"url":"https://www.oscar-system.org/"}</script>
+<!-- End Jekyll SEO tag -->
+  </head>
+  
